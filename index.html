@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p><input id="liga" type="button" onclick="liga()" value="LIGA"/>
+        <input id="desliga" type="button" onclick="desliga()" value="DESLIGA"/></p>
+        <p><input id="luminosidade" type="range" onclick="slider(value)" min="0" max="1023"/></p>
+        
+        <script>
+            function liga() {
+                fetch('/liga')
+                .then( response => {
+                    console.log(response);
+                } )
+            }
+            
+            function desliga() {
+                fetch('/desliga')
+                .then( response => {
+                    console.log(response);
+                } )
+            }
+
+            function slider(valor) {
+                var request =  {
+                    method: 'POST',
+                    body: valor,
+                    headers: new Headers()
+                };
+
+                fetch('/slider', request)
+                .then( response => {
+                    console.log(response);
+                } )
+            }
+        </script>
+    </body>
+</html>
