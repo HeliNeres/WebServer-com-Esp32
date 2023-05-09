@@ -1,7 +1,7 @@
 #import webrepl
 
-WIFI_NAME = 'Aquario'
-WIFI_PASS = 'theflash10'
+WIFI_NAME = 'NOME-DA-REDE'
+WIFI_PASS = 'SENHA'
 
 def connect():
     import network
